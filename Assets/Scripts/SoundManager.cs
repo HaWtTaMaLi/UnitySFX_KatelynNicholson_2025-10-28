@@ -17,8 +17,56 @@ public class SoundManager : MonoBehaviour
         
     }
 
-    void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        
+
+        if (!other.CompareTag("Player")) 
+            return;
+
+        if (other.gameObject.CompareTag("RaidoZone"))
+        {
+            if(radio != null)
+            {
+                radio.UnPause();
+            }
+        }
+
+        if (other.gameObject.CompareTag("AtmosphereZone"))
+        {
+            if (atmosphere != null && !atmosphere.isPlaying)
+            {
+                atmosphere.Play();
+            }
+        }
+
+        if (other.gameObject.CompareTag("SomethingZone"))
+        {
+            if (something != null)
+            {
+                something.PlayOneShot(something.clip);
+            }
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (!other.CompareTag("Player"))
+            return;
+
+        if (other.gameObject.CompareTag("RaidoZone"))
+        {
+            if(radio != null)
+            {
+                radio.Pause();
+            }
+        }
+
+        if (other.gameObject.CompareTag("AtmosphereZone"))
+        {
+            if (atmosphere != null)
+            {
+                atmosphere.Stop();
+            }
+        }
     }
 }
