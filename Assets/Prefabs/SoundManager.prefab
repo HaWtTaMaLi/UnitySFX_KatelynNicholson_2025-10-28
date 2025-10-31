@@ -44,3 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bea4201af80d674e99696f728c758a0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firePlace: {fileID: 5446781845418164327, guid: bd0746718ee6ea849a69c007a999cbee, type: 3}
+  radio: {fileID: 3681864101992534909, guid: 02e648624369824478ee26db7a476d7a, type: 3}
+  atmosphere: {fileID: 4520009082343910299, guid: 5aac166dc0ca4794ab703cd5610cf9ec, type: 3}
+  conversation: {fileID: 7896042597697625994, guid: ab33a522c6022004a96a502907aa2908, type: 3}
